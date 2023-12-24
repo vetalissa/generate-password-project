@@ -1,0 +1,37 @@
+{%  extends 'generator/base.html' %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 style="margin: 0px 0px 25px 0px">Генератор пороля</h1>
+    <form action="{% url 'password' %}" method="get">
+        <div class="length">
+            Длина пароля
+            <select class="form-select" name="length">
+                <option value="6"> 6</option>
+                <option value="7"> 7</option>
+                <option value="8"> 8</option>
+                <option value="9"> 9</option>
+                <option value="10"> 11</option>
+                <option value="12" selected='selected'> 12</option>
+                <option value="13"> 13</option>
+                <option value="14"> 14</option>
+                <option value="15"> 15</option>
+            </select>
+        </div>
+        <div class="container text-left" style="margin: 20px 0px 40px 5px">
+            <input class="form-check-input" type="checkbox" name='uppercase_letters'> Включать ли прописные буквы?
+            <br>
+            <input class="form-check-input" type="checkbox" name='lowercase_letters'> Включать ли строчные буквы?
+            <br>
+            <input class="form-check-input" type="checkbox" name='punctuation'> Включать ли символы?
+            <br>
+            <input class="form-check-input" type="checkbox" name='simbols'> Исключить ли неоднозначные символы
+            "il1Lo0O"?
+            <br>
+            <input class="form-check-input" type="checkbox" name='numbers'> Включать ли цифры?
+        </div>
+
+        <input type="submit" value='Создать &raquo;' class="btn btn-lg btn-primary">
+    </form>
+</div>
+{% endblock %}
